@@ -12,7 +12,10 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
   };
 
   return (
-    <LayoutWrapper>
+    <LayoutWrapper
+      title="Ремонт и обслуживание кофемашин в Минске | koferem.by "
+      description="Ремонт и обслуживание кофемашин всех производителей: Delonghi, Jura, Krups, Philips, Saeco, Siemens и др. в Минске. Срочно и недорого. Большой опыт работы."
+    >
       <ContactModal
         isOpen={isOpenContactModal}
         setIsOpen={changeContactModalState}

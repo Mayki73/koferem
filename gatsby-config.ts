@@ -17,6 +17,18 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: "Koferem",
+        short_name: "koferem",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "static/icon.png", // Path to your favicon
+      },
+    },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
         icon: "src/images/icon.png",
       },
     },

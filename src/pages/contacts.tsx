@@ -27,7 +27,14 @@ const Contacts: React.FC = () => {
         isOpen={isOpenContactModal}
         setIsOpen={changeContactModalState}
       />
-      <LayoutWrapper>
+      <LayoutWrapper
+        title={
+          "Контакты сервисного центра по ремонту кофемашин KofeRem | koferem.by "
+        }
+        description={
+          "Контактная информация о сервисном центре по ремонту и обслуживанию кофемашин в Минске. Сервисный центр КофеПрофСервис предоставляет услуги гарантийного и платного ремонта кофейных машин для физических и юридических лиц."
+        }
+      >
         <main>
           <Image
             imageName="kofe-bg.png"

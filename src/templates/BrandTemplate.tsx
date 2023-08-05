@@ -154,7 +154,10 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
   };
 
   return (
-    <LayoutWrapper>
+    <LayoutWrapper
+      title={pageContext.brand.pageTitle}
+      description={pageContext.brand.pageDescription}
+    >
       <ContactModal
         isOpen={isOpenContactModal}
         setIsOpen={changeContactModalState}

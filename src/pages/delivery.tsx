@@ -4,7 +4,10 @@ import Image from "../components/Image";
 
 const Delivery: React.FC = () => {
   return (
-    <LayoutWrapper>
+    <LayoutWrapper
+      title="Условия доставки и способы оплаты KofeRem | koferem.by "
+      description="Условия доставки и способы оплаты, услуги ремонта сервисного центра KofeRem."
+    >
       <main>
         <Image
           imageName="kofe-bg.png"
