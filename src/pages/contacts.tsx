@@ -1,36 +1,19 @@
-import React from "react";
-import * as yup from "yup";
+import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
-import { yupResolver } from "@hookform/resolvers/yup";
 import Image from "../components/Image";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
-import { useForm } from "react-hook-form";
-import { IContact } from "../models/contact.model";
 import ContactForm from "../components/ContactForm";
 import { AiOutlineClockCircle, AiOutlineMail } from "react-icons/ai";
 import { BiMap } from "react-icons/bi";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "../constants/query-client";
+import ContactModal from "../components/ContactModal";
 
 const Contacts: React.FC = () => {
-  const CallFormSchema = yup.object({
-    name: yup
-      .string()
-      .required("Пожалуйста, укажите, как мы можем к Вам обращаться!"),
-    phone: yup
-      .string()
-      .required(
-        "Пожалуйста, укажите контактый номер телефона для связи с Вами!"
-      ),
-    message: yup.string().default(""),
-  }) as yup.ObjectSchema<Partial<IContact>>;
+  const [isOpenContactModal, setIsOpenContactModal] = useState(false);
 
-  const useFormReturn = useForm<Partial<IContact>>({
-    resolver: yupResolver(CallFormSchema),
-  });
-
-  const submitContactFormHandler = (data: Partial<IContact>) => {
-    console.log(data);
+  const changeContactModalState = () => {
+    setIsOpenContactModal((prev) => !prev);
   };
 
   const defaultState = {
@@ -40,6 +23,10 @@ const Contacts: React.FC = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ContactModal
+        isOpen={isOpenContactModal}
+        setIsOpen={changeContactModalState}
+      />
       <LayoutWrapper>
         <main>
           <Image

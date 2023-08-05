@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
 import Image from "../components/Image";
+import ContactModal from "../components/ContactModal";
 
 const services = [
   "Поставка оригинальных запчастей",
@@ -13,8 +14,18 @@ const services = [
 ];
 
 const About: React.FC = () => {
+  const [isOpenContactModal, setIsOpenContactModal] = useState(false);
+
+  const changeContactModalState = () => {
+    setIsOpenContactModal((prev) => !prev);
+  };
+
   return (
     <LayoutWrapper>
+      <ContactModal
+        isOpen={isOpenContactModal}
+        setIsOpen={changeContactModalState}
+      />
       <main>
         <Image
           imageName="kofe-bg.png"

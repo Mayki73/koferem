@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
 import Image from "../components/Image";
 import { Link } from "gatsby";
 import Button from "../components/Form/Button";
 import clsx from "clsx";
 import { AiFillPhone } from "react-icons/ai";
+import ContactModal from "../components/ContactModal";
 
 const priceList = [
   {
@@ -146,8 +147,18 @@ const navigation = [
 ];
 
 const BrandTemplate: React.FC = ({ pageContext }: any) => {
+  const [isOpenContactModal, setIsOpenContactModal] = useState(false);
+
+  const changeContactModalState = () => {
+    setIsOpenContactModal((prev) => !prev);
+  };
+
   return (
     <LayoutWrapper>
+      <ContactModal
+        isOpen={isOpenContactModal}
+        setIsOpen={changeContactModalState}
+      />
       <main>
         <Image
           wrapperClassName="absolute left-0 top-0 z-0 h-80 w-full"
@@ -167,7 +178,9 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
               {pageContext.brand.title}
             </h1>
             <div className="flex justify-center">
-              <Button className="text-white">Рассчитать стоимость</Button>
+              <Button onClick={changeContactModalState} className="text-white">
+                Рассчитать стоимость
+              </Button>
             </div>
           </div>
         </section>
@@ -219,7 +232,12 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                   подменить кофемашину, пока ваша в ремонте
                 </p>
                 <p className="font-medium">Стоимость — 0 рублей</p>
-                <Button className="text-white">Вызвать мастера</Button>
+                <Button
+                  onClick={changeContactModalState}
+                  className="text-white"
+                >
+                  Вызвать мастера
+                </Button>
                 <p>
                   Обычно ремонт кофейных машин проходит не более 2 дней. Все
                   время вы пользуетесь кофемашиной бесплатно!
@@ -314,7 +332,10 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
               Заявка вас ни к чему не обязывает.
             </p>
             <div className="flex justify-center items-center">
-              <button className="flex items-center text-white px-6 py-3 border-2 border-white hover:bg-white hover:text-[#c9a246] rounded-md space-x-2">
+              <button
+                onClick={changeContactModalState}
+                className="flex items-center text-white px-6 py-3 border-2 border-white hover:bg-white hover:text-[#c9a246] rounded-md space-x-2"
+              >
                 <AiFillPhone className="text-[20px]" />
                 <p>Оставить заявку</p>
               </button>

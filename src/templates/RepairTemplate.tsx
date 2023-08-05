@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import LayoutWrapper from "../components/LayoutWrapper";
 import Image from "../components/Image";
 import BrandCard from "../components/BrandCard";
+import ContactModal from "../components/ContactModal";
 
 const RepairTemplate: React.FC = ({ pageContext }: any) => {
+  const [isOpenContactModal, setIsOpenContactModal] = useState(false);
+
+  const changeContactModalState = () => {
+    setIsOpenContactModal((prev) => !prev);
+  };
+
   return (
     <LayoutWrapper>
+      <ContactModal
+        isOpen={isOpenContactModal}
+        setIsOpen={changeContactModalState}
+      />
       <main>
         <Image
           imageName="kofe-bg.png"
@@ -71,7 +82,10 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
             </p>
 
             <div className="flex justify-center">
-              <button className="flex w-max items-center px-6 py-3 border-2 border-white text-white hover:text-gray-200 hover:border-gray-200 rounded-md space-x-2">
+              <button
+                onClick={changeContactModalState}
+                className="flex w-max items-center px-6 py-3 border-2 border-white text-white hover:text-gray-200 hover:border-gray-200 rounded-md space-x-2"
+              >
                 <p>Оставить заявку</p>
               </button>
             </div>
