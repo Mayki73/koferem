@@ -18,7 +18,8 @@ const About: React.FC = () => {
       <main>
         <Image
           imageName="kofe-bg.png"
-          imageClassName="absolute left-0 top-0 w-full h-[25vh] md:h-[30vh] object-cover z-0 bg-black"
+          wrapperClassName="absolute left-0 top-0 w-full bg-black z-0"
+          imageClassName="h-[25vh] md:h-[30vh] object-cover"
           alt="coffee background"
           style={{ filter: "brightness(0.5)" }}
         />

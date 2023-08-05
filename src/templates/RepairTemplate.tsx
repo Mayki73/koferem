@@ -9,7 +9,8 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
       <main>
         <Image
           imageName="kofe-bg.png"
-          imageClassName="absolute left-0 top-0 w-full h-[25vh] md:h-[30vh] object-cover z-0 bg-black"
+          wrapperClassName="absolute left-0 top-0 w-full z-0 bg-black"
+          imageClassName="h-[25vh] md:h-[30vh] object-cover"
           alt="coffee background"
           style={{ filter: "brightness(0.5)" }}
         />

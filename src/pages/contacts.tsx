@@ -44,7 +44,8 @@ const Contacts: React.FC = () => {
         <main>
           <Image
             imageName="kofe-bg.png"
-            imageClassName="absolute left-0 top-0 w-full h-[25vh] md:h-[30vh] object-cover z-0 bg-black"
+            wrapperClassName="absolute left-0 top-0 w-full z-0 bg-black"
+            imageClassName="h-[25vh] md:h-[30vh] object-cover"
             alt="coffee background"
             style={{ filter: "brightness(0.5)" }}
           />
@@ -106,10 +107,7 @@ const Contacts: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-20">
               <div className="col-span-1 md:col-span-3">
-                <ContactForm
-                  useFormInstance={useFormReturn}
-                  onSubmitForm={submitContactFormHandler}
-                />
+                <ContactForm />
               </div>
               <div className="flex flex-col items-center justify-center w-full col-span-1">
                 <div className="space-y-4">

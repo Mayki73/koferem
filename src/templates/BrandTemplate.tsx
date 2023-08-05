@@ -157,7 +157,6 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
           }}
           alt={pageContext.brand.title}
           imageName={pageContext.brand.background}
-          imageClassName={""}
         />
         <section
           className="relative max-w-6xl mx-5 md:mx-auto flex justify-center items-center"
