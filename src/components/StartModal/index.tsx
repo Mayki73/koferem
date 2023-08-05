@@ -63,9 +63,9 @@ const StartModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                       <div className="text-center space-y-3">
                         <IonIcon
                           icon={giftOutline}
-                          className="text-white w-24 h-24"
+                          className="text-white w-16 h-16 md:w-24 md:h-24"
                         />
-                        <p>
+                        <p className="text-base">
                           ПОЛУЧИТЕ ПАЧКУ <b>КОФЕ</b>
                         </p>
                       </div>
