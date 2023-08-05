@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import type { HeadFC, PageProps } from "gatsby";
+import { Link, type HeadFC, type PageProps } from "gatsby";
 import { AiFillPhone } from "react-icons/ai";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { PiSealCheckLight } from "react-icons/pi";
@@ -71,12 +71,12 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
             </ul>
 
             <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-10 pt-10">
-              <Button
-                onClick={changeContactModalState}
-                className="text-white w-max"
+              <Link
+                to="/repair"
+                className="text-white w-max bg-[#c9a246] rounded-md px-6 py-3 hover:bg-[#a3802c]"
               >
                 Наши услуги
-              </Button>
+              </Link>
               <button
                 onClick={changeContactModalState}
                 className="flex w-max items-center px-6 py-3 border-2 border-[#c9a246] hover:bg-[#c9a246] rounded-md space-x-2"
