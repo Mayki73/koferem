@@ -84,7 +84,7 @@ const PhoneNumberForm: React.FC<IProps> = ({ className, setIsOpenModal }) => {
           />
         )}
       />
-      <Button className="px-10 py-3">Отправить заявку</Button>
+      <Button className="px-10 py-3 text-white">Отправить заявку</Button>
     </form>
   );
 };

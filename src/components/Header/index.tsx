@@ -75,7 +75,7 @@ const Header: React.FC = () => {
             />
           </Link>
           <Navbar />
-          <Button onClick={changeContactModalState} className="hidden md:block">
+          <Button onClick={changeContactModalState} className="hidden md:block text-white">
             Заказать звонок
           </Button>
         </div>
