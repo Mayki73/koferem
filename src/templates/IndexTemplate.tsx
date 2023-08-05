@@ -21,7 +21,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
 
   useEffect(() => {
-    setIsOpenStartModal(true);
+    setTimeout(() => setIsOpenStartModal(true), 30000);
   }, []);
 
   const changeModalState = () => {
@@ -42,7 +42,8 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
       <main>
         <Image
           imageName="main_banner.png"
-          imageClassName="absolute left-0 top-0 w-full h-[90vh] object-cover z-0 bg-black"
+          wrapperClassName="absolute left-0 top-0 w-full h-[90vh] object-cover z-0 bg-black"
+          imageClassName="h-[90vh] object-cover object-center"
           alt="top banner"
           style={{ filter: "brightness(0.5)" }}
         />
@@ -257,10 +258,18 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
               Серьёзные неисправности кофемашин:
             </p>
             <ul className="list-none space-y-3">
-              <li className="second-custom-list-item">Нехарактерные шумы</li>
-              <li className="second-custom-list-item">Холодный кофе</li>
-              <li className="second-custom-list-item">Грубый помол зёрен</li>
-              <li className="second-custom-list-item">Протекает</li>
+              <li key="noize" className="second-custom-list-item">
+                Нехарактерные шумы
+              </li>
+              <li key="cold coffee" className="second-custom-list-item">
+                Холодный кофе
+              </li>
+              <li key="strong" className="second-custom-list-item">
+                Грубый помол зёрен
+              </li>
+              <li key="a leak" className="second-custom-list-item">
+                Протекает
+              </li>
             </ul>
 
             <p className="text-xl font-bold pt-5 text-black">
