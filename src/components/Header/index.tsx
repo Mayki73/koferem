@@ -68,7 +68,8 @@ const Header: React.FC = () => {
         <div className="max-w-6xl px-5 md:mx-auto w-full flex items-center justify-between h-16 md:h-20 border-none md:border-b bg-[#2c2c2c] md:bg-transparent border-gray-200">
           <Link className="w-max" to="/">
             <Image
-              imageClassName="relative z-10 w-14 h-2 md:w-44 md:h-12 object-contain object-center"
+              imageClassName="relative z-10 w-[10rem] h-[2rem] md:w-44 md:h-12 object-contain object-center"
+              wrapperClassName="w-[10rem] h-[2rem]"
               imageName="logo.png"
               alt="koferem логотип"
             />
