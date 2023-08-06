@@ -101,7 +101,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
               {pageContext.brands.map((brand: any) => (
                 <a
                   key={brand.brand_name}
-                  href={`/repair/${brand.brand_name.toLowerCase()}`}
+                  href={`/repair/${brand.path.toLowerCase()}`}
                 >
                   <Image
                     imageName={brand.logo}
