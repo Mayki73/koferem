@@ -75,7 +75,7 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
                   title={brand.title}
                   description={brand.subtitle}
                   image={brand.logo}
-                  to={`/repair/${brand.brand_name.toLowerCase()}`}
+                  to={`/repair/${brand.path.toLowerCase()}`}
                 />
               </li>
             ))}
@@ -94,7 +94,7 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
                   title={brand.title}
                   description={brand.subtitle}
                   image={brand.logo}
-                  to={`/repair/${brand.brand_name.toLowerCase()}`}
+                  to={`/repair/${brand.path.toLowerCase()}`}
                 />
               </li>
             ))}
