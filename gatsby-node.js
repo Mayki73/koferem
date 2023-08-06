@@ -21,7 +21,7 @@ exports.createPages = async ({ graphql, actions, useStaticQuery }) => {
 
   brands["page-templates"].forEach((brand) => {
     createPage({
-      path: `/repair/${brand.brand_name.toLowerCase()}`,
+      path: `/repair/${brand.path.toLowerCase()}`,
       component: require.resolve("./src/templates/BrandTemplate.tsx"),
       context: {
         brand,

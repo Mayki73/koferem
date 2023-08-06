@@ -30,7 +30,7 @@ const StartModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 overflow-y-auto">
-            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div className="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -40,7 +40,7 @@ const StartModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative flex flex-col lg:flex-row w-full text-white md:w-1/2 transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
+                <Dialog.Panel className="relative flex flex-col w-full text-white md:w-1/3 transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
                   <div className="absolute right-0 top-0 pr-4 pt-4 block">
                     <button
                       type="button"
@@ -52,40 +52,18 @@ const StartModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                     </button>
                   </div>
 
-                  <div className="bg-[#c9a246] p-10">
-                    <div className="p-5 border-b border-gray-600">
-                      <h2 className="font-bold text-2xl text-center">
-                        ВНИМАНИЕ, СПЕЦИАЛЬНО ДЛЯ ВАС:
-                      </h2>
-                    </div>
-
-                    <div className="flex border-b border-gray-600 justify-between items-center py-5 text-xl">
+                  <div className="bg-[#c9a246] py-4">
+                    <div className="flex justify-between items-center py-5 px-10 text-xl">
+                      <h3>ВНИМАНИЕ, СПЕЦИАЛЬНО ДЛЯ ВАС:</h3>
                       <div className="text-center space-y-3">
                         <IonIcon
                           icon={giftOutline}
-                          className="text-white w-16 h-16 md:w-24 md:h-24"
+                          className="text-white w-12 h-12 md:w-16 md:h-16"
                         />
                         <p className="text-base">
                           ПОЛУЧИТЕ ПАЧКУ <b>КОФЕ</b>
                         </p>
                       </div>
-
-                      <IonIcon
-                        icon={addOutline}
-                        className="w-14 h-14 font-bold"
-                      />
-
-                      <div className="space-y-5 text-center">
-                        <p>
-                          ЭКСКЛЮЗИВНУЮ <b>10% СКИДКУ</b> НА ВСЕ РАБОТЫ
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="p-5">
-                      <h2 className="font-bold text-xl text-center">
-                        ОСТАВЬТЕ ВАШ НОМЕР ТЕЛЕФОНА
-                      </h2>
                     </div>
                   </div>
 

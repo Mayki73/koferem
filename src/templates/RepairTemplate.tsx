@@ -6,6 +6,12 @@ import ContactModal from "../components/ContactModal";
 
 const RepairTemplate: React.FC = ({ pageContext }: any) => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
+  const householdBrands = pageContext.brands.filter((brand: any) =>
+    brand.title.includes("бытовых")
+  );
+  const builtInBrands = pageContext.brands.filter((brand: any) =>
+    brand.title.includes("встраиваемых")
+  );
 
   const changeContactModalState = () => {
     setIsOpenContactModal((prev) => !prev);
@@ -59,11 +65,30 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
 
         <section className="space-y-6 md:space-y-10 my-20 text-[#727272] max-w-6xl mx-5 md:mx-auto text-base md:text-lg">
           <h3 className="text-black text-[28px] md:text-[32px] leading-10 text-center">
-            Ремонт кофемашин любой сложности
+            Ремонт бытовых кофемашин любой сложности
           </h3>
 
           <ul className="list-none list-inside grid grid-cols-1 md:grid-cols-3 gap-10">
-            {pageContext.brands.map((brand: any) => (
+            {householdBrands.map((brand: any) => (
+              <li key={brand.title}>
+                <BrandCard
+                  title={brand.title}
+                  description={brand.subtitle}
+                  image={brand.logo}
+                  to={`/repair/${brand.brand_name.toLowerCase()}`}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="space-y-6 md:space-y-10 my-20 text-[#727272] max-w-6xl mx-5 md:mx-auto text-base md:text-lg">
+          <h3 className="text-black text-[28px] md:text-[32px] leading-10 text-center">
+            Ремонт встраиваемых кофемашин любой сложности
+          </h3>
+
+          <ul className="list-none list-inside grid grid-cols-1 md:grid-cols-3 gap-10">
+            {builtInBrands.map((brand: any) => (
               <li key={brand.title}>
                 <BrandCard
                   title={brand.title}

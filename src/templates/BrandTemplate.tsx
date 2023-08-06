@@ -110,39 +110,136 @@ const priceList = [
   },
 ];
 
-const navigation = [
-  { title: "Ремонт Delonghi", link: "/repair/delonghi" },
+const builtInNavigation = [
   {
-    title: "Ремонт Saeco",
-    link: "/repair/saeco",
+    title: "Ремонт Neff",
+    link: "/repair/built-in/neff",
+  },
+  {
+    title: "Ремонт Miele",
+    link: "/repair/built-in/miele",
+  },
+  {
+    title: "Ремонт Gaggenau",
+    link: "/repair/built-in/gaggenau",
+  },
+  {
+    title: "Ремонт Kuppersbusch",
+    link: "/repair/built-in/kupperbusch",
+  },
+  {
+    title: "Ремонт AEG",
+    link: "/repair/built-in/aeg",
+  },
+  {
+    title: "Ремонт Bosch",
+    link: "/repair/built-in/bosch",
+  },
+  {
+    title: "Ремонт Electrolux",
+    link: "/repair/built-in/electrolux",
+  },
+  {
+    title: "Ремонт Gorenje",
+    link: "/repair/built-in/gorenje",
+  },
+  {
+    title: "Ремонт Hotpoint-Ariston",
+    link: "/repair/built-in/hotpoint-ariston",
   },
   {
     title: "Ремонт Siemens",
-    link: "/repair/siemens",
+    link: "/repair/built-in/siemens",
+  },
+  {
+    title: "Ремонт Kaiser",
+    link: "/repair/built-in/kaiser",
+  },
+  {
+    title: "Ремонт Asko",
+    link: "/repair/built-in/asko",
+  },
+  {
+    title: "Ремонт Fulgor",
+    link: "/repair/built-in/fulgor",
+  },
+  {
+    title: "Ремонт Graude",
+    link: "/repair/built-in/graude",
+  },
+  {
+    title: "Ремонт Smeg",
+    link: "/repair/built-in/smeg",
+  },
+  {
+    title: "Ремонт Teka",
+    link: "/repair/built-in/teka",
+  },
+];
+
+const householdNavigation = [
+  { title: "Ремонт Bosch", link: "/repair/household/bosch" },
+  { title: "Ремонт Miele", link: "/repair/household/miele" },
+  {
+    title: "Ремонт Panasonic",
+    link: "/repair/household/panasonic",
+  },
+  {
+    title: "Ремонт Schaerer",
+    link: "/repair/household/schaerer",
+  },
+  {
+    title: "Ремонт WMF",
+    link: "/repair/household/wmf",
+  },
+  {
+    title: "Ремонт Franke",
+    link: "/repair/household/franke",
+  },
+  {
+    title: "Ремонт Gastrorag",
+    link: "/repair/household/gastrorag",
+  },
+  {
+    title: "Ремонт Grand Rich",
+    link: "/repair/household/grand-rich",
+  },
+  {
+    title: "Ремонт Kambrook",
+    link: "/repair/household/kambrook",
+  },
+  {
+    title: "Ремонт Merol",
+    link: "/repair/household/merol",
+  },
+  {
+    title: "Ремонт Nivona",
+    link: "/repair/household/nivona",
+  },
+  { title: "Ремонт Delonghi", link: "/repair/household/delonghi" },
+  {
+    title: "Ремонт Saeco",
+    link: "/repair/household/saeco",
+  },
+  {
+    title: "Ремонт Siemens",
+    link: "/repair/household/siemens",
   },
   {
     title: "Ремонт Krups",
-    link: "/repair/krups",
+    link: "/repair/household/krups",
   },
   {
     title: "Ремонт Jura",
-    link: "/repair/jura",
+    link: "/repair/household/jura",
   },
   {
     title: "Ремонт Philips",
-    link: "/repair/philips",
+    link: "/repair/household/philips",
   },
   {
     title: "Ремонт Melitta",
-    link: "/repair/melitta",
-  },
-  {
-    title: "Ремонт Gaggia",
-    link: "/repair/gaggia",
-  },
-  {
-    title: "Ремонт Vitek",
-    link: "/repair/vitek",
+    link: "/repair/household/melitta",
   },
 ];
 
@@ -305,17 +402,29 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
 
               <nav>
                 <ul className="list-none list-inside space-y-5">
-                  {navigation.map((page) => (
-                    <li key={page.link}>
-                      <Link
-                        className="py-2 border-b border-gray-200"
-                        activeClassName="text-[#c9a246]"
-                        to={page.link}
-                      >
-                        {page.title}
-                      </Link>
-                    </li>
-                  ))}
+                  {pageContext.brand.title.includes("бытовых")
+                    ? householdNavigation.map((page) => (
+                        <li key={page.link}>
+                          <Link
+                            className="py-2 border-b border-gray-200"
+                            activeClassName="text-[#c9a246]"
+                            to={page.link}
+                          >
+                            {page.title}
+                          </Link>
+                        </li>
+                      ))
+                    : builtInNavigation.map((page) => (
+                        <li key={page.link}>
+                          <Link
+                            className="py-2 border-b border-gray-200"
+                            activeClassName="text-[#c9a246]"
+                            to={page.link}
+                          >
+                            {page.title}
+                          </Link>
+                        </li>
+                      ))}
                 </ul>
               </nav>
             </div>

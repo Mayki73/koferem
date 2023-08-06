@@ -32,12 +32,11 @@ const PhoneNumberForm: React.FC<IProps> = ({ className, setIsOpenModal }) => {
   const { reset } = useFormReturn;
 
   const submitContactForm = (contact: Partial<IContact>) => {
-    // const data = {
-    //   name: contact.name!,
-    //   phone: contact.phone!,
-    // };
-    // sendEmail(data);
-    console.log(contact);
+    const data = {
+      name: contact.name!,
+      phone: contact.phone!,
+    };
+    sendEmail(data);
   };
 
   const {
@@ -61,6 +60,7 @@ const PhoneNumberForm: React.FC<IProps> = ({ className, setIsOpenModal }) => {
           <Input
             value={value}
             onChange={onChange}
+            placeholder="Ваше имя"
             className="max-w-[360px] w-full text-2xl text-black"
             error={Boolean(errors.phone?.message)}
             helperText={errors.phone?.message}
