@@ -9,8 +9,19 @@ import Button from "../Form/Button";
 import { useSendEmail } from "../../services/request.service";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-const ContactForm: React.FC = () => {
-  const { mutate: sendEmail } = useSendEmail((data) => {});
+interface IProps {
+  setIsOpenModal?: () => void;
+}
+
+const ContactForm: React.FC<IProps> = ({ setIsOpenModal }) => {
+  const { mutate: sendEmail } = useSendEmail((data) => {
+    reset({
+      name: "",
+      phone: "",
+      message: "",
+    });
+    setIsOpenModal ? setIsOpenModal() : null;
+  });
   const QuestionFormSchema = yup.object({
     name: yup.string().required("Поле обязательно для заполнения"),
     phone: yup.string().required("Поле обязательно для заполнения"),
@@ -29,6 +40,7 @@ const ContactForm: React.FC = () => {
     handleSubmit,
     formState: { errors },
     control,
+    reset,
   } = useFormReturn;
 
   return (

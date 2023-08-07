@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { IonIcon } from "@ionic/react";
-import { addOutline, giftOutline } from "ionicons/icons";
+import { giftOutline } from "ionicons/icons";
 import PhoneNumberForm from "../PhoneNumberForm";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "../../constants/query-client";
@@ -70,7 +70,7 @@ const StartModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                   <div className="py-14 px-5 text-center mx-auto space-y-3 text-black">
                     <h2 className="text-lg">У Вас остались вопросы?</h2>
                     <p>Хотите, перезвоним вам за 27 секунд?</p>
-                    <PhoneNumberForm />
+                    <PhoneNumberForm setIsOpenModal={setIsOpen} />
                     <p className="text-gray-600 text-xs">Звонок бесплатный</p>
                   </div>
                 </Dialog.Panel>
