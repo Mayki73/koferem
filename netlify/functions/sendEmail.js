@@ -52,7 +52,7 @@ exports.handler = async (event) => {
           <p><span>Имя:</span> ${name}</p>
           <p><span>Телефон:</span> ${phone}</p>
           ${message ? "<p><span>Вопрос:</span> " + message + "</p>" : ""}
-            <p>С уважением, CoffeeRemont24</p>
+            <p>С уважением, Koferem</p>
         </div>
           </body>
         </html>
