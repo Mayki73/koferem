@@ -15,31 +15,19 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-plugin-google-gtag",
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: ["GTM-PS3F7MK"], // Replace GTM-XXXXXXX with your GTM container ID
-        gtagConfig: {
-          // Additional gtag.js configuration (optional)
-          anonymize_ip: true, // Anonymize IP addresses
-        },
-        pluginConfig: {
-          // Additional plugin configuration (optional)
-          head: true, // Place GTM script in the head (recommended)
-        },
+        id: "GTM-PS3F7MK",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
       },
     },
     {
-      resolve: "gatsby-plugin-google-gtag",
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: ["GTM-NB3DKQBK"], // Replace GTM-YYYYYYY with your second GTM container ID
-        gtagConfig: {
-          // Additional gtag.js configuration for the second GTM (optional)
-          anonymize_ip: true, // Anonymize IP addresses
-        },
-        pluginConfig: {
-          // Additional plugin configuration for the second GTM (optional)
-          head: true, // Place GTM script in the head (recommended)
-        },
+        id: "GTM-NB3DKQBK",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
       },
     },
     {
