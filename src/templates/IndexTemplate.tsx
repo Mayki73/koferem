@@ -45,8 +45,8 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
       <main>
         <Image
           imageName="main_banner.png"
-          wrapperClassName="absolute left-0 top-0 w-full md:h-[90vh] object-cover z-0 bg-black"
-          imageClassName="h-[90vh] object-cover object-center"
+          wrapperClassName="absolute left-0 top-0 w-full md:h-[95vh] object-cover z-0 bg-black"
+          imageClassName="h-[95vh] object-cover object-center"
           alt="top banner"
           style={{ filter: "brightness(0.5)" }}
         />
