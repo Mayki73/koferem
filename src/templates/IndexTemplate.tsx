@@ -45,12 +45,12 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
       <main>
         <Image
           imageName="main_banner.png"
-          wrapperClassName="absolute left-0 top-0 w-full md:h-[95vh] object-cover z-0 bg-black"
-          imageClassName="h-[95vh] object-cover object-center"
+          wrapperClassName="absolute left-0 top-0 w-full h-[93vh] md:h-[80vh] object-cover z-0 bg-black"
+          imageClassName="h-[93vh] md:h-[80vh] object-cover object-center"
           alt="top banner"
           style={{ filter: "brightness(0.5)" }}
         />
-        <section className="relative max-w-6xl mx-5 md:mx-auto flex items-center h-[77vh]">
+        <section className="relative max-w-6xl mx-5 md:mx-auto flex items-center h-[75vh] md:h-[63vh]">
           <div className="space-y-3 md:space-y-5">
             <h1 className="text-[24px] md:text-[50px] text-white">
               Ремонт кофемашин за 48 часов
