@@ -15,6 +15,31 @@ const pages = [
       {
         type: "Бытовые кофемашины",
         brands: [
+          {
+            title: "Ремонт Saeco",
+            link: "/repair/household/saeco",
+          },
+          {
+            title: "Ремонт Philips",
+            link: "/repair/household/philips",
+          },
+          { title: "Ремонт Delonghi", link: "/repair/household/delonghi" },
+          {
+            title: "Ремонт Siemens",
+            link: "/repair/household/siemens",
+          },
+          {
+            title: "Ремонт Krups",
+            link: "/repair/household/krups",
+          },
+          {
+            title: "Ремонт Melitta",
+            link: "/repair/household/melitta",
+          },
+          {
+            title: "Ремонт Jura",
+            link: "/repair/household/jura",
+          },
           { title: "Ремонт Bosch", link: "/repair/household/bosch" },
           { title: "Ремонт Miele", link: "/repair/household/miele" },
           {
@@ -52,31 +77,6 @@ const pages = [
           {
             title: "Ремонт Nivona",
             link: "/repair/household/nivona",
-          },
-          { title: "Ремонт Delonghi", link: "/repair/household/delonghi" },
-          {
-            title: "Ремонт Saeco",
-            link: "/repair/household/saeco",
-          },
-          {
-            title: "Ремонт Siemens",
-            link: "/repair/household/siemens",
-          },
-          {
-            title: "Ремонт Krups",
-            link: "/repair/household/krups",
-          },
-          {
-            title: "Ремонт Jura",
-            link: "/repair/household/jura",
-          },
-          {
-            title: "Ремонт Philips",
-            link: "/repair/household/philips",
-          },
-          {
-            title: "Ремонт Melitta",
-            link: "/repair/household/melitta",
           },
         ],
       },

@@ -7,7 +7,6 @@ const Footer: React.FC = () => {
       <div className="py-20 bg-[#2c2c2c]">
         <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="space-y-2 text-gray-400 text-center">
-            <p>ООО «КОФЕРЕМ»</p>
             <p>Юридический адрес: г. Минск</p>
             <p>ул. Калиновского 64,41</p>
             <p>УНП 192834683</p>
