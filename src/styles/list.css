@@ -2,7 +2,7 @@
   list-style-type: none; /* Use the custom style */
   padding-left: 2rem; /* Add spacing between marker and text */
   position: relative;
-  font-size: 20px; 
+  font-size: 16px; 
 }
   
 .custom-list-item::before {

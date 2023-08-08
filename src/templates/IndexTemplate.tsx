@@ -52,10 +52,10 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
         />
         <section className="relative max-w-6xl mx-5 md:mx-auto flex items-center h-[77vh]">
           <div className="space-y-3 md:space-y-5">
-            <h1 className="text-[26px] md:text-[50px] text-white">
+            <h1 className="text-[24px] md:text-[50px] text-white">
               Ремонт кофемашин за 48 часов
             </h1>
-            <ul className="text-white list-none space-y-1.5 md:space-y-3 text-[16px] md:text-base">
+            <ul className="text-white list-none space-y-1.5 md:space-y-3">
               <li key="free delivery" className="custom-list-item">
                 Бесплатная доставка в мастерскую и обратно по Минску
               </li>
