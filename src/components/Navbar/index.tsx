@@ -184,7 +184,7 @@ const Navbar: React.FC = () => {
           </button>
         )}
         {isNavbarOpen ? (
-          <div className="absolute top-[4rem] left-0 w-full bg-[#2c2c2c] py-3 border-b-2 border-gray-200">
+          <div className="absolute top-[6rem] left-0 w-full bg-[#2c2c2c] py-3 border-b-2 border-gray-200">
             <ul className="list-none list-inside w-full space-y-4">
               {/* Assume you have a state for managing the open/closed state of subpages */}
               {pages.map((page) => {
