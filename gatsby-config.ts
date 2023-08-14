@@ -55,12 +55,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/icon.png",
-      },
-    },
-    {
       resolve: "gatsby-plugin-sitemap",
       options: {
         output: "/sitemap.xml", // Output path for the sitemap
