@@ -5,10 +5,6 @@ import { MdOutlineManageAccounts } from "react-icons/md";
 import { PiSealCheckLight } from "react-icons/pi";
 import { LuClock10 } from "react-icons/lu";
 import LayoutWrapper from "../components/LayoutWrapper";
-import ReplacementBackground from "../images/replacement-bg.png";
-import MaintenanceBackground from "../images/maintenance-bg.png";
-import GiftBackground from "../images/gift-bg.png";
-import KofeBackground from "../images/kofe-bg.png";
 import "../styles/list.css";
 import Button from "../components/Form/Button";
 import Image from "../components/Image";
@@ -213,7 +209,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
         <section
           className="w-full py-20"
           style={{
-            backgroundImage: `url(${ReplacementBackground})`,
+            backgroundImage: `url(/replacement-bg.png)`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -240,7 +236,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
         <section
           className="w-full py-20"
           style={{
-            backgroundImage: `url(${MaintenanceBackground})`,
+            backgroundImage: `url(/maintenance-bg.png)`,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "right -350px center",
@@ -296,7 +292,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
         <section
           className="w-full py-14 md:py-20"
           style={{
-            backgroundImage: `url(${GiftBackground})`,
+            backgroundImage: `url(/gift-bg.png)`,
             backgroundSize: "cover",
             padding: "80px 0",
             backgroundRepeat: "no-repeat",
@@ -320,7 +316,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
         <section
           className="w-full py-14 md:py-20"
           style={{
-            backgroundImage: `url(${KofeBackground})`,
+            backgroundImage: `url(/kofe-bg.png)`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             position: "relative",
