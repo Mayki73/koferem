@@ -19,6 +19,14 @@ const config: GatsbyConfig = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.koferem.by",
+        sitemap: "https://www.koferem.by/sitemap0.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PS3F7MK",
