@@ -51,7 +51,8 @@ const config: GatsbyConfig = {
         background_color: "#ffffff",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "/static/icon.png", // Path to your favicon
+        lang: "ru_RU",
+        icon: "static/icon.png", // Path to your favicon
       },
     },
     {
