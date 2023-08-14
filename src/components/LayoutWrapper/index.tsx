@@ -15,8 +15,6 @@ const LayoutWrapper: React.FC<IProps> = ({ children, title, description }) => {
     query {
       site {
         siteMetadata {
-          title
-          description
           favicon
         }
       }

@@ -2,7 +2,9 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `koferem`,
+    title: "Ремонт кофемашин и кофеварок в Минске | Обслуживание кофемашин",
+    description:
+      "Сервисный центр KofeRem оказывает услуги по ремонту кофемашин и кофеварок в Минске. Обслуживание и ремонт автоматических, рожковых, профессиональных кофемашин Delonghi, Saeco, Gaggia, Jura, Krups, Bosch, AEG, Bork и др. Гарантия.",
     siteUrl: `https://www.koferem.by`,
     favicon: "icon.png",
   },
@@ -15,6 +17,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
