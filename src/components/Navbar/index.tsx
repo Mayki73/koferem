@@ -302,7 +302,7 @@ const Navbar: React.FC = () => {
               return (
                 <>
                   <li className="group relative py-5" key={page.title}>
-                    <Link className="hover:text-[#c9a246]" to={page.link}>
+                    <Link className="hover:text-[#bc46c9]" to={page.link}>
                       {page.title}
                     </Link>
                     <div className="grid grid-cols-2 gap-x-6 absolute z-20 left-0 w-[50rem] text-[12px] bg-[#2c2c2c] mt-5 hidden group-hover:grid hover:grid p-4">
@@ -311,7 +311,7 @@ const Navbar: React.FC = () => {
                         <ul className="grid grid-cols-2 gap-x-10 gap-y-2 list-none list-inside">
                           {page.subpages[0].brands.map((brand) => (
                             <li
-                              className="hover:text-[#c9a246]"
+                              className="hover:text-[#bc46c9]"
                               key={brand.title}
                             >
                               <Link className="" to={brand.link}>
@@ -326,7 +326,7 @@ const Navbar: React.FC = () => {
                         <ul className="grid grid-cols-2 gap-x-10 gap-y-2 list-none list-inside">
                           {page.subpages[1].brands.map((brand) => (
                             <li
-                              className="hover:text-[#c9a246]"
+                              className="hover:text-[#bc46c9]"
                               key={brand.title}
                             >
                               <Link className="" to={brand.link}>
@@ -343,7 +343,7 @@ const Navbar: React.FC = () => {
             }
             return (
               <li className="py-5" key={page.title}>
-                <Link className="hover:text-[#c9a246]" to={page.link}>
+                <Link className="hover:text-[#bc46c9]" to={page.link}>
                   {page.title}
                 </Link>
               </li>

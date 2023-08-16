@@ -10,7 +10,7 @@ const Button: React.FC<IProps> = ({ children, className, ...props }) => {
   return (
     <button
       className={clsx(
-        "bg-[#c9a246] rounded-md px-6 py-3 hover:bg-[#a3802c]",
+        "bg-[#bc46c9] rounded-md px-6 py-3 hover:bg-[#872d91]",
         className
       )}
       {...props}

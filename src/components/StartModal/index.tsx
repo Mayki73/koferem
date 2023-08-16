@@ -52,7 +52,7 @@ const StartModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                     </button>
                   </div>
 
-                  <div className="bg-[#c9a246] py-4">
+                  <div className="bg-[#bc46c9] py-4">
                     <div className="flex justify-between items-center py-5 px-10 text-xl">
                       <h3 className="text-sm">ВНИМАНИЕ, СПЕЦИАЛЬНО ДЛЯ ВАС:</h3>
                       <div className="text-center space-y-3">

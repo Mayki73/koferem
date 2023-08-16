@@ -39,7 +39,7 @@ const ContactModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel className="relative flex flex-col lg:flex-row w-full text-white md:w-1/3 h-[30rem] transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
-                  <div className="absolute top-0 w-full bg-[#c9a246] flex justify-center items-center h-20">
+                  <div className="absolute top-0 w-full bg-[#bc46c9] flex justify-center items-center h-20">
                     <h1 className="px-5">
                       Закажите бесплатную диагностику поломки вашей кофемашины
                     </h1>

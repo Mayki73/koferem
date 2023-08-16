@@ -407,7 +407,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                         <li key={page.link}>
                           <Link
                             className="py-2 border-b border-gray-200"
-                            activeClassName="text-[#c9a246]"
+                            activeClassName="text-[#bc46c9]"
                             to={page.link}
                           >
                             {page.title}
@@ -418,7 +418,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                         <li key={page.link}>
                           <Link
                             className="py-2 border-b border-gray-200"
-                            activeClassName="text-[#c9a246]"
+                            activeClassName="text-[#bc46c9]"
                             to={page.link}
                           >
                             {page.title}
@@ -430,7 +430,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
             </div>
           </div>
         </div>
-        <section className="w-full flex justify-center items-center py-20 bg-[#c9a246] text-white">
+        <section className="w-full flex justify-center items-center py-20 bg-[#bc46c9] text-white">
           <div className="space-y-5 text-center mx-5 md:mx-0">
             <h5 className="text-[28px] md:text-[36px] max-w-[50rem] text-center">
               Гарантия лучшего предложения по ремонту кофемашин в Минске!
@@ -446,7 +446,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
             <div className="flex justify-center items-center">
               <button
                 onClick={changeContactModalState}
-                className="flex items-center text-white px-6 py-3 border-2 border-white hover:bg-white hover:text-[#c9a246] rounded-md space-x-2"
+                className="flex items-center text-white px-6 py-3 border-2 border-white hover:bg-white hover:text-[#bc46c9] rounded-md space-x-2"
               >
                 <AiFillPhone className="text-[20px]" />
                 <p>Оставить заявку</p>

@@ -101,7 +101,7 @@ const RepairTemplate: React.FC = ({ pageContext }: any) => {
           </ul>
         </section>
 
-        <section className="bg-[#c9a246] py-32 text-center">
+        <section className="bg-[#bc46c9] py-32 text-center">
           <div className="space-y-6 md:space-y-10 text-white max-w-6xl mx-5 md:mx-auto text-base md:text-lg">
             <h4 className="text-[36px]">У вас остались какие-то вопросы?</h4>
             <p>

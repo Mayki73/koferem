@@ -72,13 +72,13 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
             <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-10 pt-10">
               <Link
                 to="/repair"
-                className="text-white w-max bg-[#c9a246] rounded-md px-6 py-3 hover:bg-[#a3802c]"
+                className="text-white w-max bg-[#bc46c9] rounded-md px-6 py-3 hover:bg-[#872d91]"
               >
                 Наши услуги
               </Link>
               <button
                 onClick={changeContactModalState}
-                className="flex w-max items-center px-6 py-3 border-2 border-[#c9a246] hover:bg-[#c9a246] rounded-md space-x-2"
+                className="flex w-max items-center px-6 py-3 border-2 border-[#bc46c9] hover:bg-[#bc46c9] rounded-md space-x-2"
               >
                 <AiFillPhone className="text-[20px] text-white" />
                 <p className="text-white">Заказать звонок</p>
@@ -123,7 +123,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
                 Свяжитесь с нами по форме на сайте или по указанному номеру
                 телефона
               </p>
-              <p className="text-xl text-[#c9a246]">
+              <p className="text-xl text-[#bc46c9]">
                 <a href="tel:375296995069">+375 (29) 699-50-69</a>
               </p>
             </div>
@@ -326,7 +326,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
         >
           <div className="space-y-7 max-w-6xl mx-5 md:mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <div className="p-10 py-10 md:py-20 flex flex-col justify-center items-center border border-gray-200 space-y-5 hover:bg-[#c9a246] hover:border-[#c9a246]">
+              <div className="p-10 py-10 md:py-20 flex flex-col justify-center items-center border border-gray-200 space-y-5 hover:bg-[#bc46c9] hover:border-[#bc46c9]">
                 <MdOutlineManageAccounts className="text-[7rem] text-white" />
                 <p className="text-xl text-white font-medium text-center">
                   Персонал
@@ -337,7 +337,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
                 </p>
               </div>
 
-              <div className="p-10 py-10 md:py-20 flex flex-col justify-center items-center border border-gray-200 space-y-5 hover:bg-[#c9a246] hover:border-[#c9a246]">
+              <div className="p-10 py-10 md:py-20 flex flex-col justify-center items-center border border-gray-200 space-y-5 hover:bg-[#bc46c9] hover:border-[#bc46c9]">
                 <PiSealCheckLight className="text-[7rem] text-white" />
                 <p className="text-xl text-white font-medium text-center">
                   Гарантия
@@ -348,7 +348,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
                 </p>
               </div>
 
-              <div className="p-10 py-10 md:py-20 flex flex-col justify-center items-center border border-gray-200 space-y-5 hover:bg-[#c9a246] hover:border-[#c9a246]">
+              <div className="p-10 py-10 md:py-20 flex flex-col justify-center items-center border border-gray-200 space-y-5 hover:bg-[#bc46c9] hover:border-[#bc46c9]">
                 <LuClock10 className="text-[7rem] text-white" />
                 <p className="text-xl text-white font-medium text-center">
                   Цена
@@ -362,7 +362,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-[#c9a246]">
+        <section className="w-full py-20 md:py-32 bg-[#bc46c9]">
           <div className="flex flex-col justify-center items-center space-y-7 max-w-6xl mx-5 md:mx-auto text-white">
             <p className="text-[28px] md:text-[36px] max-w-[50rem] text-center">
               Гарантия лучшего предложения по ремонту кофемашин в Минске!
@@ -379,7 +379,7 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
             <div className="flex justify-center items-center">
               <button
                 onClick={changeContactModalState}
-                className="flex items-center text-white px-6 py-3 border-2 border-white hover:bg-white hover:text-[#c9a246] rounded-md space-x-2"
+                className="flex items-center text-white px-6 py-3 border-2 border-white hover:bg-white hover:text-[#bc46c9] rounded-md space-x-2"
               >
                 <AiFillPhone className="text-[20px]" />
                 <p>Заказать звонок</p>

@@ -84,7 +84,7 @@ const Delivery: React.FC = () => {
             юридическими лицами. Для этого необходимо при оформлении заказа
             указать название организации-плательщика и выслать карточку клиента
             на адрес –{" "}
-            <a href="mailto:serviscoffee@yandex.ru" className="text-[#c9a246]">
+            <a href="mailto:serviscoffee@yandex.ru" className="text-[#bc46c9]">
               serviscoffee@yandex.ru
             </a>
             . После поступления заказа, вам высылается счет, по эл.почте или
