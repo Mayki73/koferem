@@ -36,7 +36,6 @@ const LayoutWrapper: React.FC<IProps> = ({
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
-        <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="icon" href={data.site.siteMetadata.favicon} />
         <meta name="og:image" content="/icon.png" />
         <meta name="twitter:image" content="/icon.png" />
