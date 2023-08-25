@@ -7,10 +7,16 @@ import { graphql, useStaticQuery } from "gatsby";
 interface IProps {
   title: string;
   description: string;
+  url: string;
   children: React.ReactNode;
 }
 
-const LayoutWrapper: React.FC<IProps> = ({ children, title, description }) => {
+const LayoutWrapper: React.FC<IProps> = ({
+  children,
+  title,
+  description,
+  url,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -23,7 +29,6 @@ const LayoutWrapper: React.FC<IProps> = ({ children, title, description }) => {
 
   return (
     <>
-      <Header />
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -35,7 +40,17 @@ const LayoutWrapper: React.FC<IProps> = ({ children, title, description }) => {
         <link rel="icon" href={data.site.siteMetadata.favicon} />
         <meta name="og:image" content="/icon.png" />
         <meta name="twitter:image" content="/icon.png" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            name: "Koferem",
+            logo: "https://koferem.by/favicon.ico",
+            url: url,
+          })}
+        </script>
       </Helmet>
+      <Header />
       {children}
       <Footer />
     </>

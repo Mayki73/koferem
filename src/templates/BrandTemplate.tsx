@@ -254,6 +254,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
     <LayoutWrapper
       title={pageContext.brand.pageTitle}
       description={pageContext.brand.pageDescription}
+      url={`https://koferem.by/repair/${pageContext.brand.path}`}
     >
       <ContactModal
         isOpen={isOpenContactModal}

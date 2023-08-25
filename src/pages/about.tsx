@@ -24,6 +24,7 @@ const About: React.FC = () => {
     <LayoutWrapper
       title="О сервисном центре KofeRem | koferem.by "
       description="KofeRem предлагает комплексные услуги по ремонту кофемашин. Компания, помимо ремонта и обслуживания, занимается продажей запчастей, чистящих средств, кофейной техники и кофе, а также предлагает услуги аренды кофемашин."
+      url="https://koferem.by/about/"
     >
       <ContactModal
         isOpen={isOpenContactModal}

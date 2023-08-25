@@ -7,6 +7,7 @@ const Delivery: React.FC = () => {
     <LayoutWrapper
       title="Условия доставки и способы оплаты KofeRem | koferem.by "
       description="Условия доставки и способы оплаты, услуги ремонта сервисного центра KofeRem."
+      url="https://koferem.by/delivery/"
     >
       <main>
         <Image
