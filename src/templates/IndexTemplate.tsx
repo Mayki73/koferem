@@ -30,8 +30,8 @@ const IndexPage: React.FC<PageProps> = ({ pageContext }: any) => {
 
   return (
     <LayoutWrapper
-      title="Ремонт кофемашин и кофеварок в Минске | Обслуживание кофемашин"
-      description="Сервисный центр KofeRem оказывает услуги по ремонту кофемашин и кофеварок в Минске. Обслуживание и ремонт автоматических, рожковых, профессиональных кофемашин Delonghi, Saeco, Gaggia, Jura, Krups, Bosch, AEG, Bork и др. Гарантия."
+      title="Ремонт кофемашин и кофеварок в Минске на дому и сервисном центре | Koferem"
+      description="Срочный ремонт кофемашин и кофеварок у вас дома или в сервисном центре в Минске. Обслуживание и ремонт автоматических, рожковых, профессиональных кофемашин Delonghi, Saeco, Gaggia, Jura, Krups, Bosch, AEG, Bork и др. Гарантия, доступные цены."
       url="https://koferem.by/"
     >
       <StartModal isOpen={isOpenStartModal} setIsOpen={changeModalState} />
