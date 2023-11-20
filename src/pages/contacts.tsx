@@ -125,7 +125,7 @@ const Contacts: React.FC = () => {
                       <p className="text-black">Адрес мастерской:</p>
                       <p className="mt-2">
                         <a href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D1%96%D1%86%D0%B0+%D0%9A%D1%96%D1%80%D1%8B%D0%BB%D1%8B+%D0%A2%D1%83%D1%80%D0%B0%D1%9E%D1%81%D0%BA%D0%B0%D0%B3%D0%B0+26,+Minsk,+Belarus/data=!4m2!3m1!1s0x46dbcec265d5b133:0x2e7a401fb28a8230?sa=X&ved=2ahUKEwi8gZb_qqyAAxUzFBAIHb-ADyAQ8gF6BAgXEAA&ved=2ahUKEwi8gZb_qqyAAxUzFBAIHb-ADyAQ8gF6BAgZEAI">
-                          г. Минск, ул. Кирилла Туровского, 26
+                          г. Минск, ул. Филимонова, 22
                         </a>
                       </p>
                     </div>
