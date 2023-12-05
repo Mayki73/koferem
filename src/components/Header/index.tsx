@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D1%96%D1%86%D0%B0+%D0%9A%D1%96%D1%80%D1%8B%D0%BB%D1%8B+%D0%A2%D1%83%D1%80%D0%B0%D1%9E%D1%81%D0%BA%D0%B0%D0%B3%D0%B0+26,+Minsk,+Belarus/data=!4m2!3m1!1s0x46dbcec265d5b133:0x2e7a401fb28a8230?sa=X&ved=2ahUKEwi8gZb_qqyAAxUzFBAIHb-ADyAQ8gF6BAgXEAA&ved=2ahUKEwi8gZb_qqyAAxUzFBAIHb-ADyAQ8gF6BAgZEAI"
               >
                 <FaMapMarkerAlt className="text-[20px] text-[#bc46c9]" />
-                <span>г. Минск, ул. Филимонова, 22</span>
+                <span>г. Минск, ул. Петра Мстиславца, 5</span>
               </a>
               <a
                 className="text-white flex items-center space-x-3 hover:text-[#bc46c9] "
