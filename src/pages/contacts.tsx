@@ -92,6 +92,15 @@ const Contacts: React.FC = () => {
             <YMaps>
               <Map className="h-96" defaultState={defaultState}>
                 <Placemark geometry={[53.9302, 27.65406]} />
+                <Placemark
+                  geometry={[53.9288, 27.653024]}
+                  options={{
+                    iconLayout: "default#image",
+                    iconImageHref: "/images/icon-top-arrow.png",
+                    iconImageSize: [30, 30],
+                    iconImageOffset: [-15, -15],
+                  }}
+                />
               </Map>
             </YMaps>
           </section>
