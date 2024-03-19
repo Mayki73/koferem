@@ -3,10 +3,9 @@ command = "npm run build"
 publish = ".next"
 
 [[redirects]]
-  from = "/+"
-  to = "/"
+  from = "/koferem.by/*"
+  to = "https://koferem.by/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/repair/(//)+"
