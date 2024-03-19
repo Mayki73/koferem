@@ -189,13 +189,10 @@ const Navbar: React.FC = () => {
         {isNavbarOpen ? (
           <div className="absolute top-[6rem] left-0 w-full bg-[#2c2c2c] py-3 border-b-2 border-gray-200">
             <ul className="list-none list-inside w-full space-y-4">
-              {/* Assume you have a state for managing the open/closed state of subpages */}
               {pages.map((page) => {
-                // Check if the current page has subpages
                 if (page.subpages) {
                   return (
                     <li key={page.title} className="">
-                      {/* Main page link */}
                       <div className="flex justify-between items-center px-5 w-full uppercase">
                         <Link
                           className="flex justify-between items-center w-full uppercase"
@@ -203,7 +200,6 @@ const Navbar: React.FC = () => {
                         >
                           <p>{page.title}</p>
                         </Link>
-                        {/* Toggle button for subpages */}
                         {!isSubpageOpen ? (
                           <button onClick={() => setIsSubpageOpen(true)}>
                             <LiaPlusSolid className="text-[20px]" />
@@ -215,13 +211,10 @@ const Navbar: React.FC = () => {
                         )}
                       </div>
 
-                      {/* Check if subpages are open */}
                       {isSubpageOpen ? (
                         <div className="space-y-4 mt-3">
-                          {/* Render first subpage */}
                           <div className="flex justify-between items-center px-5 pl-10 w-full uppercase">
                             <p>{page.subpages[0].type}</p>
-                            {/* Toggle button for the first subpage */}
                             {!isHouseholdOpen ? (
                               <button onClick={() => setIsHouseholdOpen(true)}>
                                 <LiaPlusSolid className="text-[20px]" />
@@ -232,10 +225,8 @@ const Navbar: React.FC = () => {
                               </button>
                             )}
                           </div>
-                          {/* Check if the first subpage is open */}
                           {isHouseholdOpen ? (
                             <ul className="list-none list-inside space-y-3 pl-12">
-                              {/* Render brands under the first subpage */}
                               {page.subpages[0].brands.map((brand) => (
                                 <li key={brand.title}>
                                   <Link
@@ -249,10 +240,8 @@ const Navbar: React.FC = () => {
                             </ul>
                           ) : null}
 
-                          {/* Render the second subpage */}
                           <div className="flex justify-between items-center px-5 pl-10 w-full uppercase">
                             <p>{page.subpages[1].type}</p>
-                            {/* Toggle button for the second subpage */}
                             {!isBuiltInOpen ? (
                               <button onClick={() => setIsBuiltInOpen(true)}>
                                 <LiaPlusSolid className="text-[20px]" />
@@ -263,10 +252,8 @@ const Navbar: React.FC = () => {
                               </button>
                             )}
                           </div>
-                          {/* Check if the second subpage is open */}
                           {isBuiltInOpen ? (
                             <ul className="list-none list-inside space-y-3 pl-12">
-                              {/* Render brands under the second subpage */}
                               {page.subpages[1].brands.map((brand) => (
                                 <li key={brand.title}>
                                   <Link
@@ -285,7 +272,6 @@ const Navbar: React.FC = () => {
                   );
                 }
 
-                // If the page does not have subpages, render the single link
                 return (
                   <li className="w-full" key={page.title}>
                     <Link className="p-5 w-full uppercase" href={page.link}>

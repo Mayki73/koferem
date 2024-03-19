@@ -7,8 +7,9 @@ import { AiFillPhone } from "react-icons/ai";
 import ContactModal from "../../../../components/ContactModal";
 import Link from "next/link";
 import Brands from "../../../../data/brands.json";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import "../../../../app/globals.css";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 const priceList = [
   {
@@ -246,6 +247,30 @@ const householdNavigation = [
   },
 ];
 
+export const getStaticPaths = (async () => {
+  const paths: {
+    params: {
+      brand: string;
+    };
+  }[] = [];
+
+  Object.keys(Brands["page-templates"]).forEach((brand) => {
+    paths.push({ params: { brand: brand.toLowerCase().split("").join("-") } });
+  });
+
+  return { paths, fallback: false };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = (async ({ params }) => {
+  return {
+    props: {
+      currentBrand: Brands["page-templates"].find(
+        (brandItem: any) => brandItem.path === `household/${params?.brand}`
+      ),
+    },
+  };
+}) satisfies GetStaticProps;
+
 const HouseholdBrandTemplate: React.FC = () => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
   const params = useParams();
@@ -256,6 +281,8 @@ const HouseholdBrandTemplate: React.FC = () => {
   const changeContactModalState = () => {
     setIsOpenContactModal((prev) => !prev);
   };
+
+  if (currentBrand === null) notFound();
 
   return (
     <LayoutWrapper

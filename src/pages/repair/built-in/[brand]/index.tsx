@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LayoutWrapper from "../../../../components/LayoutWrapper";
 import Image from "../../../../components/Image";
 import Button from "../../../../components/Form/Button";
@@ -7,8 +7,9 @@ import { AiFillPhone } from "react-icons/ai";
 import ContactModal from "../../../../components/ContactModal";
 import Link from "next/link";
 import Brands from "../../../../data/brands.json";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import "../../../../app/globals.css";
+import { GetStaticPaths, GetStaticProps } from "next";
 
 const priceList = [
   {
@@ -246,16 +247,40 @@ const householdNavigation = [
   },
 ];
 
-const BuiltInBrandTemplate: React.FC = () => {
+export const getStaticPaths = (async () => {
+  const paths: {
+    params: {
+      brand: string;
+    };
+  }[] = [];
+
+  Brands["page-templates"].forEach((brand: any) => {
+    paths.push({ params: { brand: brand.path.split("/")[1] } });
+  });
+
+  return { paths, fallback: false };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = (async ({ params }) => {
+  return {
+    props: {
+      currentBrand: Brands["page-templates"].find(
+        (brandItem: any) => brandItem.path === `built-in/${params?.brand}`
+      ),
+    },
+  };
+}) satisfies GetStaticProps;
+
+const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
-  const params = useParams();
-  const currentBrand = Brands["page-templates"].find(
-    (brandItem: any) => brandItem.path === `built-in/${params?.brand}`
-  );
 
   const changeContactModalState = () => {
     setIsOpenContactModal((prev) => !prev);
   };
+
+  if (currentBrand === null) {
+    notFound();
+  }
 
   return (
     <LayoutWrapper
