@@ -248,17 +248,20 @@ const householdNavigation = [
 ];
 
 export const getStaticPaths = (async () => {
-  const paths: {
-    params: {
-      brand: string;
-    };
-  }[] = [];
-
-  Object.keys(Brands["page-templates"]).forEach((brand) => {
-    paths.push({ params: { brand: brand.toLowerCase().split("").join("-") } });
+  const paths = Brands["page-templates"].map((brandItem: any) => {
+    if (brandItem.title.includes("бытовых")) {
+      return {
+        params: {
+          brand: brandItem.path.split("/")[1],
+        },
+      };
+    }
   });
 
-  return { paths, fallback: false };
+  return {
+    paths: paths.filter((item) => item !== undefined) as any,
+    fallback: false,
+  };
 }) satisfies GetStaticPaths;
 
 export const getStaticProps = (async ({ params }) => {
@@ -271,12 +274,8 @@ export const getStaticProps = (async ({ params }) => {
   };
 }) satisfies GetStaticProps;
 
-const HouseholdBrandTemplate: React.FC = () => {
+const HouseholdBrandTemplate: React.FC = ({ currentBrand }: any) => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
-  const params = useParams();
-  const currentBrand = Brands["page-templates"].find(
-    (brandItem: any) => brandItem.path === `household/${params?.brand}`
-  );
 
   const changeContactModalState = () => {
     setIsOpenContactModal((prev) => !prev);

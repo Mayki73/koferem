@@ -9,12 +9,7 @@ import { AiFillPhone } from "react-icons/ai";
 import Button from "@/components/Form/Button";
 
 const NotFound: React.FC = () => {
-  const [isOpenStartModal, setIsOpenStartModal] = useState(false);
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
-
-  const changeModalState = () => {
-    setIsOpenStartModal((prev) => !prev);
-  };
 
   const changeContactModalState = () => {
     setIsOpenContactModal((prev) => !prev);

@@ -248,17 +248,20 @@ const householdNavigation = [
 ];
 
 export const getStaticPaths = (async () => {
-  const paths: {
-    params: {
-      brand: string;
-    };
-  }[] = [];
-
-  Brands["page-templates"].forEach((brand: any) => {
-    paths.push({ params: { brand: brand.path.split("/")[1] } });
+  const paths = Brands["page-templates"].map((brandItem: any) => {
+    if (brandItem.title.includes("встраиваемых")) {
+      return {
+        params: {
+          brand: brandItem.path.split("/")[1],
+        },
+      };
+    }
   });
 
-  return { paths, fallback: false };
+  return {
+    paths: paths.filter((item) => item !== undefined) as any,
+    fallback: false,
+  };
 }) satisfies GetStaticPaths;
 
 export const getStaticProps = (async ({ params }) => {
