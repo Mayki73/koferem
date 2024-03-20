@@ -3,6 +3,11 @@ command = "npm run build"
 publish = ".next"
 
 [[redirects]]
+  from = "/*///*"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/repair/(//)+"
   to = "/repair/"
   status = 301
@@ -67,3 +72,6 @@ publish = ".next"
   from = "/repair/index.html"
   to = "/repair/"
   status = 301
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
