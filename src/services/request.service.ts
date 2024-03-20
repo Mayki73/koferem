@@ -3,9 +3,7 @@ import { IContact } from "../models/contact.model";
 import { useMutation } from "@tanstack/react-query";
 
 const sendEmail = async (data: IContact) => {
-  return axios
-    .post("/.netlify/functions/sendEmail", data)
-    .then((res: any) => res.data);
+  return axios.post("/api/sendEmail", data).then((res: any) => res.data);
 };
 
 export const useSendEmail = (
