@@ -19,7 +19,7 @@ const NotFound: React.FC = () => {
     <LayoutWrapper
       title="Страница не найдена | Koferem"
       description="Срочный ремонт кофемашин и кофеварок у вас дома или в сервисном центре в Минске. Обслуживание и ремонт автоматических, рожковых, профессиональных кофемашин Delonghi, Saeco, Gaggia, Jura, Krups, Bosch, AEG, Bork и др. Гарантия, доступные цены."
-      url="https://koferem.by/404"
+      url="https://koferem.by/404/"
     >
       <ContactModal
         isOpen={isOpenContactModal}
