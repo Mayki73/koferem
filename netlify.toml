@@ -3,6 +3,11 @@ command = "npm run build"
 publish = ".next"
 
 [[redirects]]
+  from = "/*/////"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/repair/(//)+"
   to = "/repair/"
   status = 301
