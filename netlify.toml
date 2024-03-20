@@ -6,6 +6,11 @@ publish = ".next"
   pretty_urls = true
 
 [[redirects]]
+  from = "/"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/index.html"
   to = "/"
   status = 301
