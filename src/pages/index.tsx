@@ -13,10 +13,12 @@ import ContactModal from "../components/ContactModal";
 import Brands from "../data/brands.json";
 import "../styles/list.css";
 import "../app/globals.css";
+import { useRouter } from "next/router";
 
 const Main: React.FC = () => {
   const [isOpenStartModal, setIsOpenStartModal] = useState(false);
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setTimeout(() => setIsOpenStartModal(true), 30000);
@@ -29,6 +31,17 @@ const Main: React.FC = () => {
   const changeContactModalState = () => {
     setIsOpenContactModal((prev) => !prev);
   };
+
+  useEffect(() => {
+    const { pathname } = router;
+
+    // Check if the pathname has multiple slashes
+    if (pathname.includes("//")) {
+      // Remove extra slashes and redirect
+      const newPathname = pathname.replace(/\/{2,}/g, "/");
+      router.push(newPathname, undefined, { shallow: true });
+    }
+  }, [router]);
 
   return (
     <LayoutWrapper
