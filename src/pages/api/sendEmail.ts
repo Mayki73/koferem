@@ -19,7 +19,7 @@ export default async function handler(req: any, res: any) {
 
   const mailOptions = {
     from: "servicecoffee.5upport@yandex.ru",
-    to: "antoniestories@gmail.com", //serviscoffee@yandex.ru
+    to: "serviscoffee@yandex.ru",
     subject: subject,
     html: `
       <!DOCTYPE html>
