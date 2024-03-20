@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/",
+  basePath: "",
   trailingSlash: true,
   async redirects() {
     return [
       {
-        source: "/*",
+        source: "/(//)+",
         destination: "/",
         statusCode: 301,
       },
