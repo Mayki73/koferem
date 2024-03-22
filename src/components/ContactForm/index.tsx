@@ -8,18 +8,24 @@ import Input from "../Form/Input";
 import Button from "../Form/Button";
 import { useSendEmail } from "../../services/request.service";
 import { yupResolver } from "@hookform/resolvers/yup";
+import toast, { Toaster } from "react-hot-toast";
 
 interface IProps {
   setIsOpenModal?: () => void;
 }
 
 const ContactForm: React.FC<IProps> = ({ setIsOpenModal }) => {
-  const { mutate: sendEmail } = useSendEmail((data) => {
+  const {
+    mutate: sendEmail,
+    isSuccess,
+    isPending,
+  } = useSendEmail((data) => {
     reset({
       name: "",
       phone: "",
       message: "",
     });
+    toast.success("Ваше сообщение отправлено!");
     setIsOpenModal ? setIsOpenModal() : null;
   });
   const QuestionFormSchema = yup.object({
@@ -34,7 +40,6 @@ const ContactForm: React.FC<IProps> = ({ setIsOpenModal }) => {
 
   const submitContactForm = (contact: any) => {
     sendEmail(contact);
-    console.log(contact);
   };
   const {
     handleSubmit,
@@ -93,7 +98,20 @@ const ContactForm: React.FC<IProps> = ({ setIsOpenModal }) => {
         />
 
         <div className="flex justify-center">
-          <Button className="text-white w-full">Отправить</Button>
+          <Button className="text-white w-full" disabled={isPending}>
+            {isPending ? (
+              <div
+                className="inline-block h-6 w-6 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                role="status"
+              >
+                <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                  Loading...
+                </span>
+              </div>
+            ) : (
+              "Отправить"
+            )}
+          </Button>
         </div>
       </form>
     </QueryClientProvider>

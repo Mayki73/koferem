@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-interface IProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface IProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
 }

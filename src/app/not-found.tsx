@@ -7,6 +7,7 @@ import Image from "@/components/Image";
 import Link from "next/link";
 import { AiFillPhone } from "react-icons/ai";
 import Button from "@/components/Form/Button";
+import { Toaster } from "react-hot-toast";
 
 const NotFound: React.FC = () => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
@@ -85,6 +86,7 @@ const NotFound: React.FC = () => {
           </div>
         </section>
       </main>
+      <Toaster position="top-right" reverseOrder={false} />
     </LayoutWrapper>
   );
 };
