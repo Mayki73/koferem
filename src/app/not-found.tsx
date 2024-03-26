@@ -29,8 +29,8 @@ const NotFound: React.FC = () => {
       <main>
         <Image
           imageName="main_banner.png"
-          wrapperClassName="absolute left-0 top-0 w-full h-[11vh] md:h-[20vh] object-cover z-0 bg-black"
-          imageClassName="h-[11vh] md:h-[20vh] object-cover object-center"
+          wrapperClassName="absolute left-0 top-0 w-full h-[11vh] md:h-[22vh] object-cover z-0 bg-black"
+          imageClassName="h-[11vh] md:h-[22vh] object-cover object-center"
           alt="top banner"
           style={{ filter: "brightness(0.5)" }}
         />
