@@ -113,7 +113,7 @@ const Main: React.FC = () => {
               {Brands["page-templates"].slice(0, 6)?.map((brand: any) => (
                 <a
                   key={brand.brand_name}
-                  href={`/repair/${brand.path.toLowerCase()}`}
+                  href={`/repair/${brand.path.toLowerCase()}/`}
                 >
                   <Image
                     imageName={brand.logo}
