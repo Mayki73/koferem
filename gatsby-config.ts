@@ -14,7 +14,6 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",
-    "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
@@ -58,7 +57,29 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
-        output: "/sitemap.xml", // Output path for the sitemap
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => "https://www.koferem.by",
+        resolvePages: ({ allSitePage: { nodes: allPages } }: any) => {
+          return allPages.map((page: any) => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path, modifiedGmt }: any) => {
+          return {
+            url: path,
+            lastmod: modifiedGmt,
+            changefreq: "daily",
+            priority: 0.9,
+          };
+        },
       },
     },
     "gatsby-transformer-json",
