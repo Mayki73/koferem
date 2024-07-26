@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 
           <div className="space-y-2 text-gray-400 text-center">
             <p className="text-lg">Время работы:</p>
-            <p>Пн–Пт: 9:00—18:00</p>
+            <p>Пн–Пт: 9:00—19:00</p>
             <p>Сб: 11:00-16:00</p>
             <p>Вс: Выходной</p>
           </div>

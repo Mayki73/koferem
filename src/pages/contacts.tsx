@@ -145,7 +145,7 @@ const Contacts: React.FC = () => {
                     <AiOutlineClockCircle className="text-[30px]" />
                     <div>
                       <p className="text-black">Режим работы:</p>
-                      <p className="mt-2">Пн–Пт: 9:00—18:00</p>
+                      <p className="mt-2">Пн–Пт: 9:00—19:00</p>
                       <p>Сб: 11:00-16:00</p>
                       <p>Вс: Выходной</p>
                     </div>
