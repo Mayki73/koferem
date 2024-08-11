@@ -193,7 +193,7 @@ const Navbar: React.FC = () => {
         {isNavbarOpen ? (
           <div className="absolute top-[6rem] left-0 w-full bg-[#2c2c2c] py-3 border-b-2 border-gray-200">
             <ul className="list-none list-inside w-full space-y-4">
-              {pages.map((page) => {
+              {pages?.map((page) => {
                 if (page.subpages) {
                   return (
                     <li key={page.title} className="">
