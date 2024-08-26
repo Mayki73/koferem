@@ -362,7 +362,7 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
       <LayoutWrapper
         title={currentBrand?.pageTitle}
         description={currentBrand?.pageDescription}
-        url={`https://koferem.by/repair/${currentBrand?.path}`}
+        url={`https://koferem.by/repair/${currentBrand?.path}/`}
       >
         <ContactModal
           isOpen={isOpenContactModal}
