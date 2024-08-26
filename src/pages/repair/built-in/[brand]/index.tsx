@@ -335,10 +335,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       (brandItem: any) => brandItem.path === `built-in/${params?.brand}`
     ) || null;
 
-  if (!currentBrand) {
-    console.log(`No brand found for path: built-in/${params?.brand}`);
-  }
-
   return {
     props: {
       currentBrand,

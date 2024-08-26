@@ -262,7 +262,7 @@ const HouseholdBrandTemplate: React.FC = () => {
     <LayoutWrapper
       title={currentBrand?.pageTitle!}
       description={currentBrand?.pageDescription!}
-      url={`https://koferem.by/repair/${currentBrand?.path!}`}
+      url={`https://koferem.by/repair/${currentBrand?.path!}/`}
     >
       <ContactModal
         isOpen={isOpenContactModal}
