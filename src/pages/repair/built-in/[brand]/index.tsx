@@ -20,6 +20,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "@/constants/query-client";
 import PromoContactForm from "@/components/PromoContactForm";
 import "../../../../app/globals.css";
+import "../../../../styles/list.css";
 
 const priceList = [
   {
@@ -380,7 +381,7 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
             imageName={currentBrand?.background}
           />
           <section
-            className="relative max-w-6xl mx-5 md:mx-auto flex justify-center items-center"
+            className="relative max-w-6xl mx-5 md:mx-auto flex justify-start items-center"
             style={{ height: "24rem" }}
           >
             <div className="space-y-5">
@@ -388,8 +389,8 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
                 {currentBrand?.title}
               </h1>
 
-              <div className="w-full flex justify-center">
-                <ul className="list-none">
+              <div className="w-full flex justify-start">
+                <ul className="list-none space-y-2">
                   <li key="diagnostic" className="custom-list-item text-white">
                     <span className="decoration-solid">Диагностика</span>{" "}
                     кофемешины и{" "}
@@ -422,7 +423,7 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
                 </ul>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex justify-start">
                 <Button
                   onClick={changeContactModalState}
                   className="text-white"
@@ -461,40 +462,31 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
                               <span className="font-medium text-lg">
                                 {item?.title || item}
                               </span>
-                              <p>{item?.description || ""}</p>
+                              <p className="not-italic">
+                                {item?.description || ""}
+                              </p>
                             </li>
                           ))}
                         </ul>
                       )}
                       {section?.isFaq && (
-                        <section
-                          key={index}
-                          className="space-y-6"
-                          style={{ paddingTop: "2rem", paddingBottom: "2rem" }}
-                        >
-                          <h2 className="text-[28px] text-black leading-10">
-                            {section.header}
-                          </h2>
-                          <p>{section.description}</p>
-
-                          <ul className="list-none space-y-4">
-                            {section?.faqs?.map((item: any) => (
-                              <Accordion
-                                key={item.id}
-                                open={open === item.id}
+                        <ul className="list-none space-y-4">
+                          {section?.faqs?.map((item: any) => (
+                            <Accordion
+                              key={item.id}
+                              open={open === item.id}
+                              placeholder=""
+                            >
+                              <AccordionHeader
                                 placeholder=""
+                                onClick={() => handleOpen(item.id)}
                               >
-                                <AccordionHeader
-                                  placeholder=""
-                                  onClick={() => handleOpen(item.id)}
-                                >
-                                  {item.question}
-                                </AccordionHeader>
-                                <AccordionBody>{item.answer}</AccordionBody>
-                              </Accordion>
-                            ))}
-                          </ul>
-                        </section>
+                                {item.question}
+                              </AccordionHeader>
+                              <AccordionBody>{item.answer}</AccordionBody>
+                            </Accordion>
+                          ))}
+                        </ul>
                       )}
                       {section?.isTable && (
                         <table className="border-collapse border border-slate-400 w-full">
