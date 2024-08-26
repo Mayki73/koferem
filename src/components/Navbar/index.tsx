@@ -196,7 +196,7 @@ const Navbar: React.FC = () => {
               {pages?.map((page) => {
                 if (page.subpages) {
                   return (
-                    <li key={page.title} className="">
+                    <li key={page.link} className="">
                       <div className="flex justify-between items-center px-5 w-full uppercase">
                         <Link
                           className="flex justify-between items-center w-full uppercase"

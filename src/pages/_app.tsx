@@ -2,6 +2,7 @@ import queryClient from "@/constants/query-client";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { AppProps } from "next/app";
+import "../styles/global.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

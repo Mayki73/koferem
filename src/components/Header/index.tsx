@@ -50,7 +50,8 @@ const Header: React.FC = () => {
               </a>
               <a
                 className="text-white flex items-center space-x-3 hover:text-[#bc46c9] hidden md:flex"
-                href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D1%96%D1%86%D0%B0+%D0%9A%D1%96%D1%80%D1%8B%D0%BB%D1%8B+%D0%A2%D1%83%D1%80%D0%B0%D1%9E%D1%81%D0%BA%D0%B0%D0%B3%D0%B0+26,+Minsk,+Belarus/data=!4m2!3m1!1s0x46dbcec265d5b133:0x2e7a401fb28a8230?sa=X&ved=2ahUKEwi8gZb_qqyAAxUzFBAIHb-ADyAQ8gF6BAgXEAA&ved=2ahUKEwi8gZb_qqyAAxUzFBAIHb-ADyAQ8gF6BAgZEAI"
+                target="_tablet"
+                href="https://yandex.by/maps/157/minsk/?ll=27.555691%2C53.902735&mode=routes&no-distribution=1&profile-mode=1&rtext=~53.928796%2C27.653288&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D206388354015&source=wizbiz_new_map_single&z=12"
               >
                 <FaMapMarkerAlt className="text-[20px] text-[#bc46c9]" />
                 <span>г. Минск, ул. Петра Мстиславца, 5</span>
