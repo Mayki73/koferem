@@ -29,50 +29,46 @@ const PromoContactForm: React.FC = () => {
   const handleSubmitForm = (data: { phone: string }) => {
     contactForm(data);
   };
+
   return (
-    <section className="space-y-10">
-      <div className="bg-[#bc46c9] text-white p-10 space-y-4">
-        <div className="flex items-center space-x-10">
-          <p className="text-xl font-semibold">Выезд мастера бесплатно</p>
-
-          <p className="text-base">
-            Оставьте заявку и мы свяжемся для уточнения деталей в течении 15
-            минут
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          <form
-            onSubmit={handleSubmit(handleSubmitForm)}
-            className="flex items-center space-x-10"
-          >
-            <Controller
-              name="phone"
-              control={control}
-              render={({ field: { value, onChange } }) => (
-                <Input
-                  name="phone"
-                  value={value}
-                  onChange={onChange}
-                  className="text-black"
-                  mask="+375 (99) 999-99-99"
-                  maskChar=" "
-                  placeholder="Номер телефона"
-                  error={Boolean(errors.phone?.message)}
-                  helperText={errors.phone?.message}
-                />
-              )}
-            />
-
-            <Button className="border border-white">
-              Заказать выезд мастера
-            </Button>
-          </form>
-          <p className="text-sm text-gray-100">
-            * Отправляя запрос Вы соглашаетесь на обработку персональных данных
-          </p>
-        </div>
+    <section className="py-10 px-5 bg-[#bc46c9] text-white rounded-lg space-y-6">
+      <div className="space-y-3">
+        <h2 className="text-2xl font-semibold">Выезд мастера бесплатно</h2>
+        <p className="text-lg">
+          Оставьте заявку, и мы свяжемся с вами для уточнения деталей в течение 15 минут.
+        </p>
       </div>
+
+      <form
+        onSubmit={handleSubmit(handleSubmitForm)}
+        className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0"
+      >
+        <Controller
+          name="phone"
+          control={control}
+          render={({ field: { value, onChange } }) => (
+            <Input
+              name="phone"
+              value={value}
+              onChange={onChange}
+              className="text-black flex-1 text-base"
+              mask="+375 (99) 999-99-99"
+              maskChar=" "
+              placeholder="Номер телефона"
+              error={Boolean(errors.phone?.message)}
+              helperText={errors.phone?.message}
+            />
+          )}
+        />
+
+        <Button className="w-full md:w-auto bg-white text-base text-[#bc46c9] px-6 py-3 font-semibold border border-white hover:bg-[#ffffff90] transition-all">
+          Заказать выезд мастера
+        </Button>
+      </form>
+
+      <p className="text-xs text-gray-200">
+        * Отправляя запрос, вы соглашаетесь на обработку персональных данных.
+      </p>
     </section>
   );
 };
