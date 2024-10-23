@@ -24,7 +24,7 @@ import "../../../../styles/list.css";
 import { Controller, useForm } from "react-hook-form";
 import Input from "@/components/Form/Input";
 import { useSendEmail } from "@/services/request.service";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { IContact } from "@/models/contact.model";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -268,30 +268,32 @@ const steps = [
   {
     id: 1,
     title: "Оформление заявки",
-    description: "Вы оставляете заявку и наши эксперты связываются с Вами.",
+    description:
+      "Вы можете оставить заявку на ремонт через наш сайт или по телефону.",
   },
   {
     id: 2,
     title: "Бесплатная диагностика",
     description:
-      "Производится мастером на дому или, в особо сложных ситуациях - в сервисном центре.",
+      "Мастер проводит диагностику на дому или в нашем сервисном центре.",
   },
   {
     id: 3,
     title: "Расчёт стоимости",
     description:
-      "В результате диагностики определяется причина поломки и рассчитывается стоимость ремонта.",
+      "После выявления причины поломки мы согласовываем стоимость и сроки ремонта.",
   },
   {
     id: 4,
     title: "Ремонт кофемашины",
-    description: "Специалист производит ремонт кофемашины.",
+    description:
+      "Проводится ремонт с заменой необходимых деталей и проверка кофемашины на работоспособность.",
   },
   {
     id: 5,
-    title: "Выдача гарантии",
+    title: "Гарантия и выдача",
     description:
-      "После ремонта Вы получаете гарантию до 1 года на выполнение работ.",
+      "Вы получаете исправную кофемашину и гарантию до 1 года выполненные работы.",
   },
 ];
 
@@ -359,12 +361,14 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
     isSuccess,
     isPending,
   } = useSendEmail((data) => {
+    setIsOpenContactModal(false);
     reset({
       name: "",
       phone: "",
     });
     toast.success("Ваше сообщение отправлено!");
   });
+
   const QuestionFormSchema = yup.object({
     name: yup.string().required("Поле обязательно для заполнения"),
     phone: yup.string().required("Поле обязательно для заполнения"),
@@ -453,7 +457,11 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
                     </li>
                     <li key="repair" className="custom-list-item text-white">
                       Ремонт кофемашины {currentBrand?.brand_name}{" "}
-                      <span className="font-semibold">0 BYN</span>
+                      <span className="font-semibold">день в день</span>
+                    </li>
+                    <li key="repair" className="custom-list-item text-white">
+                      Гарантия{" "}
+                      <span className="font-semibold">от 6 месяцев</span>
                     </li>
                     <li
                       key="diagnostic"
@@ -912,6 +920,18 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
             </div>
           </section>
         </main>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            className: "",
+            style: {
+              borderLeft: "5  px solid #713200",
+              padding: "16px",
+              color: "#713200",
+            },
+          }}
+        />
       </LayoutWrapper>
     </QueryClientProvider>
   );

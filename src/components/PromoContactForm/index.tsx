@@ -5,10 +5,12 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../Form/Button";
 import Input from "../Form/Input";
+import toast from "react-hot-toast";
 
 const PromoContactForm: React.FC = () => {
   const { mutate: contactForm } = useSendEmail(() => {
     reset();
+    toast.success("Ваша заявка на звонок успешно отправлена!");
   });
 
   const PhoneFormSchema = yup.object().shape({
@@ -35,7 +37,8 @@ const PromoContactForm: React.FC = () => {
       <div className="space-y-3">
         <h2 className="text-2xl font-semibold">Выезд мастера бесплатно</h2>
         <p className="text-lg">
-          Оставьте заявку, и мы свяжемся с вами для уточнения деталей в течение 15 минут.
+          Оставьте заявку, и мы свяжемся с вами для уточнения деталей в течение
+          15 минут.
         </p>
       </div>
 

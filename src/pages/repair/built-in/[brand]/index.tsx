@@ -14,13 +14,18 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
-
+import * as yup from "yup";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "@/constants/query-client";
 import PromoContactForm from "@/components/PromoContactForm";
 import "../../../../app/globals.css";
 import "../../../../styles/list.css";
+import toast, { Toaster } from "react-hot-toast";
+import { useSendEmail } from "@/services/request.service";
+import { IContact } from "@/models/contact.model";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const priceList = [
   {
@@ -262,30 +267,32 @@ const steps = [
   {
     id: 1,
     title: "Оформление заявки",
-    description: "Вы оставляете заявку и наши эксперты связываются с Вами.",
+    description:
+      "Вы можете оставить заявку на ремонт через наш сайт или по телефону.",
   },
   {
     id: 2,
     title: "Бесплатная диагностика",
     description:
-      "Производится мастером на дому или, в особо сложных ситуациях - в сервисном центре.",
+      "Мастер проводит диагностику на дому или в нашем сервисном центре.",
   },
   {
     id: 3,
     title: "Расчёт стоимости",
     description:
-      "В результате диагностики определяется причина поломки и рассчитывается стоимость ремонта.",
+      "После выявления причины поломки мы согласовываем стоимость и сроки ремонта.",
   },
   {
     id: 4,
     title: "Ремонт кофемашины",
-    description: "Специалист производит ремонт кофемашины.",
+    description:
+      "Проводится ремонт с заменой необходимых деталей и проверка кофемашины на работоспособность.",
   },
   {
     id: 5,
-    title: "Выдача гарантии",
+    title: "Гарантия и выдача",
     description:
-      "После ремонта Вы получаете гарантию до 1 года на выполнение работ.",
+      "Вы получаете исправную кофемашину и гарантию до 1 года выполненные работы.",
   },
 ];
 
@@ -347,6 +354,38 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
   const [isOpenContactModal, setIsOpenContactModal] = useState(false);
   const [open, setOpen] = React.useState(1);
 
+  const {
+    mutate: sendEmail,
+    isSuccess,
+    isPending,
+  } = useSendEmail((data) => {
+    changeContactModalState();
+    reset({
+      name: "",
+      phone: "",
+    });
+    toast.success("Ваше сообщение отправлено!");
+  });
+
+  const QuestionFormSchema = yup.object({
+    name: yup.string().required("Поле обязательно для заполнения"),
+    phone: yup.string().required("Поле обязательно для заполнения"),
+  }) as yup.ObjectSchema<Partial<IContact>>;
+
+  const useFormReturn = useForm<Partial<IContact>>({
+    resolver: yupResolver(QuestionFormSchema),
+  });
+
+  const submitContactForm = (contact: any) => {
+    sendEmail(contact);
+  };
+  const {
+    handleSubmit,
+    formState: { errors },
+    control,
+    reset,
+  } = useFormReturn;
+
   const handleOpen = (value: number) => setOpen(open === value ? 0 : value);
   const currentPath = usePathname();
 
@@ -389,39 +428,51 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
                 {currentBrand?.title}
               </h1>
 
-              <div className="w-full flex justify-start">
-                <ul className="list-none space-y-2">
-                  <li key="diagnostic" className="custom-list-item text-white">
-                    <span className="decoration-solid">Диагностика</span>{" "}
-                    кофемешины и{" "}
-                    <span className="decoration-solid">оценка</span> ремонта{" "}
-                    <span className="font-semibold">0 BYN</span>
-                  </li>
-                  <li key="delivery" className="custom-list-item text-white">
-                    <span className="decoration-solid">Доставка</span>{" "}
-                    кофемашины <span className="font-semibold">0 BYN</span>
-                  </li>
-                  <li key="masters" className="custom-list-item text-white">
-                    <span className="decoration-solid">Выезд мастера</span> на
-                    дом, офис, кафе или ресторан{" "}
-                    <span className="font-semibold">0 BYN</span>
-                  </li>
-                  <li key="outgoing" className="custom-list-item text-white">
-                    Выезд мастера в течении{" "}
-                    <span className="font-semibold">60 минут</span>
-                  </li>
-                  <li key="repair" className="custom-list-item text-white">
-                    Ремонт кофемашины {currentBrand?.brand_name}{" "}
-                    <span className="font-semibold">0 BYN</span>
-                  </li>
-                  <li key="diagnostic" className="custom-list-item text-white">
-                    Принимаем заявки{" "}
-                    <span className="font-semibold">
-                      круглосуточно и без выходных
-                    </span>
-                  </li>
-                </ul>
-              </div>
+              {currentBrand.title.includes("DeLonghi") && (
+                <div className="w-full flex justify-start">
+                  <ul className="list-none space-y-2">
+                    <li
+                      key="diagnostic"
+                      className="custom-list-item text-white"
+                    >
+                      <span className="decoration-solid">Диагностика</span>{" "}
+                      кофемешины и{" "}
+                      <span className="decoration-solid">оценка</span> ремонта{" "}
+                      <span className="font-semibold">0 BYN</span>
+                    </li>
+                    <li key="delivery" className="custom-list-item text-white">
+                      <span className="decoration-solid">Доставка</span>{" "}
+                      кофемашины <span className="font-semibold">0 BYN</span>
+                    </li>
+                    <li key="masters" className="custom-list-item text-white">
+                      <span className="decoration-solid">Выезд мастера</span> на
+                      дом, офис, кафе или ресторан{" "}
+                      <span className="font-semibold">0 BYN</span>
+                    </li>
+                    <li key="outgoing" className="custom-list-item text-white">
+                      Выезд мастера в течении{" "}
+                      <span className="font-semibold">60 минут</span>
+                    </li>
+                    <li key="repair" className="custom-list-item text-white">
+                      Ремонт кофемашины {currentBrand?.brand_name}{" "}
+                      <span className="font-semibold">день в день</span>
+                    </li>
+                    <li key="repair" className="custom-list-item text-white">
+                      Гарантия{" "}
+                      <span className="font-semibold">от 6 месяцев</span>
+                    </li>
+                    <li
+                      key="diagnostic"
+                      className="custom-list-item text-white"
+                    >
+                      Принимаем заявки{" "}
+                      <span className="font-semibold">
+                        круглосуточно и без выходных
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              )}
 
               <div className="flex justify-start">
                 <Button
@@ -771,6 +822,18 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
             </div>
           </section>
         </main>
+        <Toaster
+          position="top-right"
+          reverseOrder={false}
+          toastOptions={{
+            className: "",
+            style: {
+              borderLeft: "5  px solid #713200",
+              padding: "16px",
+              color: "#713200",
+            },
+          }}
+        />
       </LayoutWrapper>
     </QueryClientProvider>
   );

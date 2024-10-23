@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import ContactForm from "../ContactForm";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Toaster } from "react-hot-toast";
 
 interface IProps {
   isOpen: boolean;
@@ -57,6 +58,18 @@ const ContactModal: React.FC<IProps> = ({ isOpen, setIsOpen }) => {
               </Dialog.Panel>
             </Transition.Child>
           </div>
+          <Toaster
+            position="top-right"
+            reverseOrder={false}
+            toastOptions={{
+              className: "",
+              style: {
+                borderLeft: "5  px solid #713200",
+                padding: "16px",
+                color: "#713200",
+              },
+            }}
+          />
         </div>
       </Dialog>
     </Transition.Root>
