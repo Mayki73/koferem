@@ -2,6 +2,32 @@ import React from "react";
 import { SiMetrodeparis } from "react-icons/si";
 
 const Footer: React.FC = () => {
+  // Define the JSON-LD script object
+  const jsonLdData = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    name: "Коферем",
+    image: ["https://koferem.by/_next/image/?url=%2Flogo.png&w=1080&q=75"],
+    description: "Ремонт кофемашин",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      bestRating: "4,9",
+      ratingCount: "20",
+      ratingValue: "5.0",
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "BYN",
+      price: "30",
+      itemCondition: "https://schema.org/NewCondition",
+      availability: "https://schema.org/InStoreOnly",
+      seller: {
+        "@type": "Organization",
+        name: "Коферем",
+      },
+    },
+  };
+
   return (
     <footer>
       <div className="py-20 bg-[#2c2c2c]">
@@ -10,6 +36,7 @@ const Footer: React.FC = () => {
             <p>Юридический адрес: г. Минск</p>
             <p>ул. Калиновского 64,41</p>
             <p>УНП 192834683</p>
+            <p>Рейтинг ⭐️⭐️⭐️⭐️⭐️ на основе отзывов клиентов</p>
           </div>
 
           <div className="space-y-2 text-gray-400 text-center">
@@ -56,6 +83,12 @@ const Footer: React.FC = () => {
       <div className="py-5 bg-[#1f1f1f] text-center text-gray-400">
         <p>Все права защищены © 2012 - {new Date().getFullYear()}</p>
       </div>
+
+      {/* Inject JSON-LD script using dangerouslySetInnerHTML */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+      />
     </footer>
   );
 };

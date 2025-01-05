@@ -46,10 +46,6 @@ const pages = [
           { title: "Ремонт Bosch", link: "/repair/household/bosch/" },
           { title: "Ремонт Miele", link: "/repair/household/miele/" },
           {
-            title: "Ремонт Kaffit",
-            link: "/repair/household/kaffit/",
-          },
-          {
             title: "Ремонт Panasonic",
             link: "/repair/household/panasonic/",
           },

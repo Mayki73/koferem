@@ -14,6 +14,7 @@ import Brands from "../data/brands.json";
 import "../styles/list.css";
 import "../app/globals.css";
 import { useRouter } from "next/router";
+import CookieConsent from "react-cookie-consent";
 
 const Main: React.FC = () => {
   const [isOpenStartModal, setIsOpenStartModal] = useState(false);
@@ -403,6 +404,39 @@ const Main: React.FC = () => {
             </div>
           </div>
         </section>
+        <CookieConsent
+          location="bottom"
+          buttonText="Я согласен"
+          cookieName="policy"
+          style={{
+            background: "white",
+            color: "black",
+            maxWidth: "400px",
+            marginBottom: "20px",
+            marginLeft: "20px",
+            borderRadius: "20px",
+            boxShadow:
+              " 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
+          }}
+          buttonStyle={{
+            color: "white",
+            fontSize: "14px",
+            background: "#bc46c9",
+            borderRadius: "10px",
+            padding: "10px",
+          }}
+          expires={150}
+          debug={true}
+        >
+          <p className="font-bold text-[20px] mb-2">Файлы сookie</p>
+          <p className="text-[14px] text-gray-900">
+            Для обеспечения удобства пользователей сайта koferem.by используются
+            файлы cookie. Подробнее об этом вы можете узнать в{" "}
+            <a href="" className="text-blue-500 hover:cursor-pointer">
+              Политике в отношении обработки файлов cookie.
+            </a>
+          </p>
+        </CookieConsent>
       </main>
     </LayoutWrapper>
   );
