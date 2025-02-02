@@ -364,7 +364,10 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
       name: "",
       phone: "",
     });
-    toast.success("Ваше сообщение отправлено!");
+    toast.success(`Спасибо! Ваш заказ принят!
+      
+      В ближайшее время с Вами свяжется оператор для подтверждения заказа.      
+      `);
   });
 
   const QuestionFormSchema = yup.object({

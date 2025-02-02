@@ -9,8 +9,13 @@ import toast from "react-hot-toast";
 
 const PromoContactForm: React.FC = () => {
   const { mutate: contactForm } = useSendEmail(() => {
-    reset();
-    toast.success("Ваша заявка на звонок успешно отправлена!");
+    reset({
+      phone: "",
+    });
+    toast.success(`Спасибо! Ваш заказ принят!
+      
+      В ближайшее время с Вами свяжется оператор для подтверждения заказа.
+      `);
   });
 
   const PhoneFormSchema = yup.object().shape({

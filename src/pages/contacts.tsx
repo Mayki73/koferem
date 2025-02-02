@@ -90,20 +90,11 @@ const Contacts: React.FC = () => {
           </section>
 
           <section className="max-w-6xl mx-5 md:mx-auto">
-            <YMaps>
-              <Map className="h-96" defaultState={defaultState}>
-                <Placemark geometry={[53.9302, 27.65406]} />
-                <Placemark
-                  geometry={[53.9288, 27.653024]}
-                  options={{
-                    iconLayout: "default#image",
-                    iconImageHref: "/images/icon-top-arrow.png",
-                    iconImageSize: [30, 30],
-                    iconImageOffset: [-15, -15],
-                  }}
-                />
-              </Map>
-            </YMaps>
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=206388354015"
+              width="100%"
+              height="400"
+            ></iframe>
           </section>
 
           <section className="max-w-6xl mx-5 md:mx-auto space-y-10 py-20">

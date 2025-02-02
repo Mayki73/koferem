@@ -366,7 +366,10 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
       name: "",
       phone: "",
     });
-    toast.success("Ваше сообщение отправлено!");
+    toast.success(`Спасибо! Ваш заказ принят!
+      
+В ближайшее время с Вами свяжется оператор для подтверждения заказа.      
+`);
   });
 
   const QuestionFormSchema = yup.object({
@@ -685,7 +688,7 @@ const BuiltInBrandTemplate: React.FC = ({ currentBrand }: any) => {
                       >
                         <div className="absolute w-full h-full top-0 bg-black/30 z-[0] backdrop-blur-sm" />
                         <p className="text-[24px] md:text-[28px] font-semibold text-white leading-10 z-1 relative">
-                          Закажите беплатную диагностику
+                          Закажите бесплатную диагностику
                         </p>
 
                         <p className="text-center text-white z-1 relative">
